@@ -1,0 +1,171 @@
+$tt_bg: #282828;
+$tt_fg: #ebdbb2;
+$tt_bg0: #1d2021;
+$tt_fg0: #fbf1c7;
+$tt_red: #cc241d;
+$tt_green: #98971a;
+$tt_yellow: #d79921;
+$tt_blue: #458588;
+$tt_purple: #b16286;
+$tt_aqua: #689d6a;
+$tt_gray: #a89984;
+$tt_gray_h: #928374;
+$tt_red_h: #fb4934;
+$tt_green_h: #b8bb26;
+$tt_yellow_h: #fabd2f;
+$tt_blue_h: #83a598;
+$tt_purple_h: #d3869b;
+$tt_aqua_h: #8ec07c;
+
+body {
+    font-family: 'Inconsolata', monospace !important;
+    font-size: 100% !important;
+    background-color: $tt_bg !important;
+    color: $tt_fg !important;
+    min-height: 100%;
+}
+
+#site_logo {
+    width: 35px;
+    height: 35px;
+}
+
+::selection {
+    background-color: $tt_red;
+    color: $tt_fg0;
+}
+
+::-moz-selection {
+    background-color: $tt_red;
+    color: $tt_fg0;
+}
+
+@media (max-width: 767.98px) {
+    body {
+        font-size: 120% !important;
+    }
+
+    #site_logo {
+        width: 50px;
+        height: 50px;
+    }
+    .fullwwidth {
+        display: none;
+    }
+}
+
+hr {
+    border-top: 1px solid $tt_yellow;
+}
+
+.crazyimportant {
+    background-color: $tt_red;
+    color: $tt_fg0;
+    padding-left: 0.25em;
+    padding-right: 0.25em;
+}
+
+header, footer {
+    background-color: $tt_bg0;
+    font-size: 1.2em;
+    a {
+        color: $tt_fg;
+    }
+    a:hover {
+        color: $tt_fg0;
+    }
+    .active {
+        color: $tt_yellow;
+        font-weight: 700;
+    }
+    .active:hover {
+        color: $tt_yellow_h;
+    }
+}
+
+.navbar-toggler {
+    background-color: $tt_bg;
+}
+
+main {
+	p {
+		padding-top: 0.5em;
+	}
+	a {
+		color: $tt_blue_h;
+	}
+	a:hover {
+		color: $tt_blue;
+	}
+	a::before {
+		content: "\2192\2009";	
+	}
+	@mixin headings {
+		font-family: 'Crimson Text', serif;
+		font-weight: 400;
+		color: $tt_aqua;
+	}
+	h1 {
+		@include headings;
+		font-size: 2.5em;
+		padding-top: 1em;
+	}
+	h2 {
+		@include headings;
+		font-size: 2em;
+	}
+	h3 {
+		@include headings;
+		font-size: 1.5em;
+	}
+	h4 {
+		@include headings;
+		font-size: 1em;
+	}
+	h5 {
+		@include headings;
+		font-size: 0.83em;
+	}
+	h6 {
+		@include headings;
+		font-size: 0.75em;
+	}
+	.fullwidth {
+		width: 100%;
+		height: 100%;
+	}
+	%yellowborder {
+		border: 1px solid $tt_yellow; 
+	}
+	.card {
+		@extend %yellowborder;
+		background-color: $tt_bg;
+	}
+	.cardcompleted {
+		@extend %yellowborder;
+		background-color: $tt_bg0 !important;
+	}
+	.table-bordered {
+		@extend %yellowborder;
+		color: $tt_fg;
+		p {
+			color: $tt_fg;
+		}
+		ul {
+			color: $tt_fg;
+		}
+		th {
+			@extend %yellowborder;
+		}
+		td {
+			@extend %yellowborder;
+		}
+	}
+	th {
+		border-bottom: none !important;
+	}
+}
+
+li > a::before {
+	content: "";
+}
